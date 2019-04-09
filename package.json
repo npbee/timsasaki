@@ -1,0 +1,20 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "live-server src --mount=/:dist & yarn css --watch",
+    "css": "postcss ./src/style.css -o ./dist/style.css"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "live-server": "^1.2.1",
+    "postcss": "^7.0.14",
+    "prettier": "^1.16.4",
+    "tailwindcss": "^0.7.4"
+  },
+  "dependencies": {
+    "postcss-cli": "^6.1.2"
+  }
+}
