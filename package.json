@@ -4,17 +4,36 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "live-server src --mount=/:dist & yarn css --watch",
-    "css": "postcss ./src/style.css -o ./dist/style.css"
+    "start": "concurrently 'yarn watch:cp' 'yarn watch:css' 'yarn server'",
+    "build": "rm -rf dist && yarn cp && NODE_ENV=production yarn css && yarn report",
+    "server": "live-server dist",
+    "report": "node ./scripts/report.js",
+    "watch:cp": "sane 'npm run cp' src --ignored='*.css'",
+    "cp": "copy 'src/**/!(*.css)' dist",
+    "watch:css": "yarn css --watch",
+    "css": "postcss ./src/css/style.css -o ./dist/css/style.css",
+    "a11y": "pa11y ./src/index.html",
+    "seo": "seolint http://localhost:8080"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^1.1.0",
+    "chalk": "^2.4.2",
+    "cli-table": "^0.3.1",
+    "concurrently": "^4.1.0",
+    "copy": "^0.3.2",
     "cssnano": "^4.1.10",
+    "globby": "^9.2.0",
+    "gzip-size": "^5.0.0",
     "live-server": "^1.2.1",
+    "pa11y": "^5.1.0",
     "postcss": "^7.0.14",
+    "postcss-cli": "^6.1.2",
+    "postcss-simple-vars": "^5.0.2",
     "prettier": "^1.16.4",
+    "pretty-bytes": "^5.1.0",
+    "sane": "^4.1.0",
+    "seolint": "^0.14.2",
     "tailwindcss": "^0.7.4"
   },
-  "dependencies": {
-    "postcss-cli": "^6.1.2"
-  }
+  "dependencies": {}
 }

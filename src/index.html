@@ -2,93 +2,197 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Tim Sasaki | LCSW, MPH</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="canonical" href="https://timsasaki.com" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="description"
+      content="A licensed clinical social worker with over ten years of experience providing mental health services in English and Spanish in the Bay Area"
+    />
   </head>
-  <body class="lg:px-4">
-    <header class="flex items-center justify-between py-8 container mx-auto">
-      <a href="/">
-        <img
-          src="https://place-hold.it/100x50"
-          alt="Logo Image - Link to Home"
-        />
-      </a>
-      <nav>
-        <a class="px-3" href="#about">About</a>
-        <a class="px-3" href="#services">Services</a>
-        <a class="px-3" href="#contact">Contact</a>
-      </nav>
-    </header>
-    <main class="">
-      <section
-        class="page page-home  mb-32 mx-auto flex flex-col justify-center relative"
+  <body class="text-black text-base">
+    <!-- header -->
+    <header class="header lg:pt-0" id="header">
+      <div
+        class="flex flex-col lg:flex-row items-center justify-between container mx-auto"
       >
-        <div class="flex justify-center">
-          <img
-            src="https://place-hold.it/1440x600"
-            alt="Logo Image - Link to Home"
-          />
-        </div>
-        <div class="absolute w-full h-full">
-          <div class="h-full flex justify-center items-center">
-            <h1>Tim Sasaki</h1>
+        <a
+          href="/"
+          class="logo-anchor p-5 block text-center lg:text-left w-full lg:w-auto px-5 lg:px-0"
+        >
+          <img src="img/logo.svg" class="w-24" alt="Logo image" />
+        </a>
+        <nav
+          class="text-grey-darkest flex flex-row justify-between w-full lg:w-auto uppercase tracking-wide"
+          id="nav"
+        >
+          <a
+            class="flex-1 p-3 py-4 lg:py-2 lg:mx-2 text-center text-grey800 text-sm border-none"
+            href="#about"
+            >About</a
+          >
+          <a
+            class="flex-1 p-3 py-4 lg:py-2 lg:mx-2 text-center text-sm text-grey800 border-none"
+            href="#services"
+            >Services</a
+          >
+          <a
+            class="flex-1 p-3 py-4 lg:py-2 lg:mx-2 text-center text-sm text-grey800 border-none"
+            href="#contact"
+            >Contact</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main class="">
+      <!-- Home -->
+      <section>
+        <div class="hero">
+          <div
+            class="h-full flex justify-start items-center container mx-auto flex-column px-5 lg:px-0"
+          >
+            <div class="flex flex-col">
+              <div class="flex flex-col lg:flex-row items-baseline mb-1">
+                <h1 class="mr-2 text-5xl text-grey-lightest font-light">
+                  Tim Sasaki
+                </h1>
+                <p class="text-grey-light text-2xl pl-1">LCSW, MPH</p>
+              </div>
+              <p class="text-xl text-grey-light pl-1">Psychotherapist</p>
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- ABOUT -->
       <section
-        class="page page-about container mx-auto mb-32 flex flex-col lg:flex-row"
+        class="page page-about container mx-auto mb-32 py-32 px-5 lg:px-0"
+        id="about"
       >
-        <div class="lg:flex-1 lg:mr-8 lg:max-w-md">
-          <h2>About Me</h2>
-          <p class="leading-normal">
-            Hello! My name is Tim Sasaki and I’m a licensed clinical social
-            worker with over ten years of experience providing mental health
-            services in English and Spanish in the Bay Area.
-          </p>
-          <p class="leading-normal mb-4">
-            My background in community mental health has allowed me to work with
-            a wide range of identities and populations, including: severely
-            emotionally disturbed children, adults with severe mental illness,
-            transitional age LGBTQ youth, immigrants, gay and lesbian adults,
-            transgender and nonbinary adults, and many identities in between.
-          </p>
-          <p class="leading-normal mb-4">
-            I help individuals work through challenges like depression, anxiety,
-            life transitions, work stress, relationships, grief and loss, severe
-            mental illness, substance use and addiction, trauma, gender
-            transition, coming out, aging, multiple minority stress, aging in
-            the queer community, and issues related to immigration.
-          </p>
-          <p class="leading-normal">
-            I hold master’s degrees in Social Welfare and Public Health from the
-            University of California Berkeley, and I completed my bachelor’s
-            degree at the University of Wisconsin, Madison. I am a member of the
-            National Association of Social Work, Psychologytoday, and I serve on
-            the Steering Committee for the Coalition of Clinical Social Work at
-            the San Francisco Center for Psychoanalysis.
-          </p>
+        <h2 class="heading heading-yellow">
+          About Me
+        </h2>
+        <div class="grid page-section">
+          <div class="col">
+            <p
+              class="leading-normal text-xl lg:text-2xl mb-8 lg:mb-12 font-light"
+            >
+              Hello! My name is Tim Sasaki and I’m a licensed clinical social
+              worker with over ten years of experience providing mental health
+              services in English and Spanish in the Bay Area.
+            </p>
+            <div class="lg:hidden mb-8">
+              <img
+                src="img/headshot.jpg"
+                alt="Photo of Tim Sasaki"
+                class="rounded-sm w-100"
+              />
+            </div>
+            <div class="flex-1 mb-16">
+              <p class="text-lg text-grey-darkest leading-normal mb-4">
+                I help individuals work through challenges including:
+              </p>
+              <ul role="list" class="bullet-list">
+                <li role="list-item">Depression</li>
+                <li role="list-item">Anxiety</li>
+                <li role="list-item">Life transitions</li>
+                <li role="list-item">Work Stress</li>
+                <li role="list-item">Relationships</li>
+                <li role="list-item">Grief and loss</li>
+                <li role="list-item">Severe mental illness</li>
+                <li role="list-item">Substance use and addiction</li>
+                <li role="list-item">Trauma</li>
+                <li role="list-item">Gender transition</li>
+                <li role="list-item">Coming out</li>
+                <li role="list-item">Aging</li>
+                <li role="list-item">Multiple minority stress</li>
+                <li role="list-item">Aging in the queer community</li>
+                <li role="list-item">Issues related to immigration</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col pl-32 hidden lg:block">
+            <img
+              src="img/headshot.jpg"
+              alt="Photo of Tim Sasaki"
+              class="rounded-sm shadow"
+            />
+          </div>
         </div>
-        <div>
-          <img
-            src="https://place-hold.it/400x500"
-            alt="Logo Image - Link to Home"
-          />
+
+        <div class="grid-reverse items-center">
+          <div class="col mb-12">
+            <p class="text-sm uppercase text-grey600 tracking-wide mb-2">
+              About Me
+            </p>
+            <h3 class="heading text-3xl">
+              Background
+            </h3>
+            <p class="leading-normal text-lg mb-6 text-grey-darkest">
+              My background in community mental health has allowed me to work
+              with a wide range of identities and populations, including:
+              severely emotionally disturbed children, adults with severe mental
+              illness, transitional age LGBTQ youth, immigrants, gay and lesbian
+              adults, transgender and nonbinary adults, and many identities in
+              between.
+            </p>
+            <p class="leading-normal text-lg text-grey-darkest">
+              I hold master’s degrees in Social Welfare and Public Health from
+              the University of California Berkeley, and I completed my
+              bachelor’s degree at the University of Wisconsin, Madison. I am a
+              member of the National Association of Social Work,
+              Psychologytoday, and I serve on the Steering Committee for the
+              Coalition of Clinical Social Work at the San Francisco Center for
+              Psychoanalysis.
+            </p>
+          </div>
+          <div class="col flex justify-center items-center">
+            <img
+              data-src="img/desk.jpg"
+              alt="Image of a desk with a plant on it"
+              class="shadow rounded-sm w-100 lg:w-3/4 lazyload"
+            />
+          </div>
         </div>
       </section>
 
-      <section class="page page-service container mx-auto mb-32 flex">
-        <div class="flex-1 max-w-md mr-8">
-          <h2>Services</h2>
-          <p class="leading-normal mb-8">
+      <!-- Services -->
+      <section class="page page-service px-5 lg:px-0 py-32 mb-32" id="services">
+        <div class="container mx-auto">
+          <h2 class="heading heading-green">
+            Services
+          </h2>
+          <p class="leading-normal text-xl lg:text-2xl font-light lg:w-3/4">
             I provide individual psychotherapy and pre-surgical assessment for
             gender affirming surgeries at my office in the Mission District of
-            San Francisco, California.
+            San Francisco, California. Please call or email me to set up an
+            initial phone consultation.
           </p>
-          <ul>
-            <li class="mb-6">
-              <p class="mb-3">Individual Psychotherapy</p>
-              <p>
+          <div
+            class="flex items-center justify-center py-32 flex-col lg:flex-row"
+          >
+            <div class="lg:w-1/2 lg:mr-12 mb-12 flex-1">
+              <p class="text-sm uppercase text-grey600 tracking-wide mb-2">
+                Services
+              </p>
+              <h3 class="heading text-3xl">
+                Individual Psychotherapy
+              </h3>
+              <p class="leading-normal text-lg text-grey-darkest">
                 I believe the power of therapy lies in improving your
                 relationship to the world, the people close to you, and
                 ultimately to yourself. My approach to therapy is
@@ -99,13 +203,34 @@
                 mindfulness. I welcome any questions you might have about my
                 approach to therapy.
               </p>
-            </li>
-
-            <li>
-              <p class="mb-3">
-                Pre-Surgical Assessment for Gender Affirming Surgery
+            </div>
+            <div class="flex-1">
+              <img
+                class="xshadow rounded-sm lazyload"
+                data-src="img/plant.jpg"
+                alt="Image of a plant"
+              />
+            </div>
+          </div>
+          <div
+            class="flex items-center justify-center py-32 flex-col-reverse lg:flex-row"
+          >
+            <div class="lg:w-1/2 lg:mr-12 lg:p-4 flex-1">
+              <img
+                class="shadow rounded-sm lazyload"
+                data-src="img/leaves.jpg"
+                alt="Image of leaves changing colors"
+                style="xmax-width: 500px;"
+              />
+            </div>
+            <div class="flex-1 mb-12">
+              <p class="text-sm uppercase text-grey600 tracking-wide mb-2">
+                Services
               </p>
-              <p>
+              <h3 class="heading text-3xl">
+                Pre-Surgical Assessment for Gender Affirming Surgery
+              </h3>
+              <p class="leading-normal text-lg text-grey-darkest">
                 I am committed to ensuring the assessment process is
                 collaborative, transparent, and guided by your narrative. I have
                 written over 50 assessments (“letters”) for adults pursuing
@@ -113,71 +238,86 @@
                 thinking about surgery, please feel free to contact me so we can
                 talk more about what to expect of the process.
               </p>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <img
-            src="https://place-hold.it/400x500"
-            alt="Logo Image - Link to Home"
-          />
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="page page-contact container mx-auto mb-8">
-        <h2>Contact</h2>
-        <div class="flex">
-          <div class="flex-1 max-w-md mr-8 flex flex-col">
-            <div>
-              <img
-                src="https://place-hold.it/400x200"
-                alt="Logo Image - Link to Home"
-              />
+      <!-- Contact -->
+      <section class="page page-contact bg-grey100 px-5 lg:px-0" id="contact">
+        <div class="container mx-auto py-32">
+          <h2 class="heading heading-grey">
+            Contact
+          </h2>
+          <div class="flex flex-col lg:flex-row">
+            <div class="flex-1 lg:w-1/2 lg:mr-8 mb-8">
+              <p class="text-2xl text-grey700 mb-8 leading-normal font-light">
+                To get started, please call or email me to setup an initial
+                phone conversation.
+              </p>
+              <div class="contact-card">
+                <p class="contact-card-header">Phone</p>
+                <p class="contact-card-text">
+                  <a href="tel: +1-415-364-8429">(415) 364-8429</a>
+                </p>
+              </div>
+              <div class="contact-card">
+                <p class="contact-card-header">Email</p>
+                <p class="contact-card-text">
+                  <a href="mailto: info@timsasaki.com">info@timsasaki.com</a>
+                </p>
+              </div>
+              <div class="contact-card mr-8 mb-6">
+                <p class="contact-card-header">
+                  Address
+                </p>
+                <div>
+                  <a href="https://goo.gl/maps/2kZ67wMcrwcJpYrbA">
+                    <p class="contact-card-text">1234 Main Street</p>
+                    <p class="contact-card-text">San Francisco, CA</p>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div>
-              <p><strong>Address</strong></p>
-              <p>1234 Main Street</p>
-              <p>San Francisco, CA</p>
+            <div class="flex-1">
+              <iframe
+                title="Map embed for office location"
+                class="mb-6"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3155.165973958346!2d-122.42613078468331!3d37.73925027976592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e68b415caf3%3A0x14632cd989156a41!2sMission+St%2C+California!5e0!3m2!1sen!2sus!4v1555277632306!5m2!1sen!2sus"
+                width="100%"
+                height="500"
+                frameborder="0"
+                style="border:0"
+                allowfullscreen
+              ></iframe>
             </div>
-
-            <div>
-              <p><strong>Phone</strong></p>
-              <p>(415) 111 1111</p>
-            </div>
-
-            <div>
-              <p><strong>Email</strong></p>
-              <p>contact@timsasaki.com</p>
-            </div>
-          </div>
-          <div>
-            <form class="flex flex-col">
-              <label>Name</label>
-              <input />
-
-              <label>Email</label>
-              <input />
-
-              <label>Message</label>
-              <textarea></textarea>
-              <button>Send</button>
-            </form>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div class="container mx-auto flex justify-between py-16">
-        <div>
-          <p>Tim Sasaki LCSW, MPH</p>
-          <p>California License No: 74798</p>
+    <footer class="text-grey700 text-sm">
+      <div
+        class="container mx-auto flex flex-col lg:flex-row justify-between py-12 px-5 lg:px-0"
+      >
+        <div class="mb-8 lg:mb-0">
+          <p class="mb-1 leading-tight">
+            Tim Sasaki <span class="text-xs text-grey600">LCSW, MPH</span>
+          </p>
+          <p class="leading-tight">
+            California License No: <span class="text-grey600">74798</span>
+          </p>
         </div>
         <div>
-          <p>1234 Main street</p>
-          <p>San Francisco, CA</p>
+          <p class="mb-1 leading-tight">1234 Main street</p>
+          <p class="mb-1 leading-tight">San Francisco, CA</p>
+          <p class="leading-tight">
+            <a href="tel: +1-415-364-8429">(415) 364-8429</a>
+          </p>
         </div>
       </div>
     </footer>
+    <script src="js/lazysizes.min.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

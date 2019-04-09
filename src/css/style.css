@@ -1,0 +1,166 @@
+@tailwind preflight;
+
+@tailwind components;
+
+/**
+ * Components
+ */
+.contact-card {
+  @apply flex flex-col items-center mb-4;
+  @apply items-start;
+}
+
+.contact-card svg {
+  @apply w-4 text-grey500 mb-1;
+}
+
+.contact-card-header {
+  @apply text-sm tracking-wide text-grey600 font-semibold mb-1 uppercase;
+}
+
+.contact-card-text {
+  @apply text-sm leading-tight;
+}
+
+/**
+ * Global
+ */
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  @apply text-green700 no-underline;
+  outline: none;
+  transition-property: color, border-color;
+  transition-duration: 300ms;
+  border-bottom: 2px solid;
+  border-color: transparent;
+}
+
+a:hover {
+  @apply text-green600;
+  @apply border-green600;
+}
+
+a:focus,
+a:active {
+  @apply font-semibold;
+}
+
+.heading {
+  @apply text-4xl font-light text-grey900 mb-4;
+}
+
+.heading:after {
+  @apply rounded-sm mt-2;
+  display: block;
+  content: "";
+  height: 2px;
+  width: 100px;
+}
+
+.heading-yellow:after {
+  @apply bg-yellow300;
+}
+
+.heading-white:after {
+  @apply bg-grey500;
+}
+
+.heading-green:after {
+  @apply bg-green600;
+}
+
+.heading-grey:after {
+  @apply bg-grey600;
+}
+
+.heading-purple:after {
+  @apply bg-purple300;
+}
+
+.logo-anchor {
+  border: none;
+}
+
+.bullet-list {
+  column-count: 3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 8px;
+  row-gap: 12px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.bullet-list li {
+  @apply leading-tight flex items-center leading-tight;
+}
+
+.bullet-list li:before {
+  @apply mr-2;
+  flex: none;
+  content: "";
+  display: inline-block;
+  background-image: url("/img/icon-check.svg");
+  background-repeat: no-repeat;
+  height: 16px;
+  width: 16px;
+}
+
+.page-section {
+  @apply mb-32;
+}
+
+/**
+ * Nav/Header
+ */
+.header {
+  @apply sticky w-full pin-t flex bg-white items-center z-10;
+  transition: box-shadow 300ms;
+}
+
+/**
+ * Pages
+ */
+
+.hero-container {
+  @apply absolute pin-t w-full;
+  height: 100vh;
+  z-index: -1;
+}
+
+.hero {
+  position: relative;
+  background-image: url(/img/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+  max-height: 700px;
+  width: 100%;
+}
+
+@tailwind utilities;
+
+.grid-reverse,
+.grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.col {
+  flex-basis: 50%;
+}
+
+@media (min-width: 992px) {
+  .grid {
+    flex-direction: row;
+  }
+
+  .grid-reverse {
+    flex-direction: row-reverse;
+  }
+}
