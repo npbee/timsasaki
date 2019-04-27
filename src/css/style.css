@@ -110,7 +110,7 @@ a:active {
 }
 
 .page-section {
-  @apply mb-32;
+  @apply mb-16;
 }
 
 /**
