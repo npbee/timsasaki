@@ -51,15 +51,7 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  /**
-   * Smooth scroll to anchors
-   */
-  function scrollIt(destination, callback) {
-    var duration = 300;
-    var easing = t => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
-    var start = window.pageYOffset;
-    var startTime =
-      "now" in window.performance ? performance.now() : Date.now();
+  function getDestinationOffset(destination) {
     var documentHeight = Math.max(
       document.body.scrollHeight,
       document.body.offsetHeight,
@@ -73,11 +65,23 @@
       document.getElementsByTagName("body")[0].clientHeight;
     var destinationOffset =
       typeof destination === "number" ? destination : destination.offsetTop;
-    var destinationOffsetToScroll = Math.round(
+    return Math.round(
       documentHeight - destinationOffset < windowHeight
         ? documentHeight - windowHeight
         : destinationOffset
     );
+  }
+
+  /**
+   * Smooth scroll to anchors
+   */
+  function scrollIt(destination, callback) {
+    var duration = 300;
+    var easing = t => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
+    var start = window.pageYOffset;
+    var startTime =
+      "now" in window.performance ? performance.now() : Date.now();
+    var destinationOffsetToScroll = getDestinationOffset(destination);
 
     if ("requestAnimationFrame" in window === false) {
       window.scroll(0, destinationOffsetToScroll);
@@ -112,6 +116,23 @@
     history.pushState({ anchor: anchor }, document.title, "#" + anchor);
   }
 
+  function scrollUntilReached(target, attempts) {
+    attempts = attempts || 0;
+
+    if (attempts >= 3) return;
+
+    scrollIt(target, function() {
+      var destinationOffsetToScroll = getDestinationOffset(target);
+      var diff = Math.abs(window.pageYOffset - destinationOffsetToScroll);
+
+      if (diff >= 10) {
+        setTimeout(function() {
+          scrollUntilReached(target, attempts + 1);
+        }, 300);
+      }
+    });
+  }
+
   /**
    * Listens for click on the nav elements and smooth-scrolls to the anchor
    * elements
@@ -125,8 +146,8 @@
         var clickTarget = event.target;
         var href = clickTarget.getAttribute("href").slice(1);
         var target = document.getElementById(href);
+        scrollUntilReached(target);
         setHistory(href);
-        scrollIt(target);
       }
     });
 
@@ -144,4 +165,14 @@
 
   nav();
   headerShadow();
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var hash = window.location.hash;
+
+    if (hash) {
+      setTimeout(function() {
+        scrollUntilReached(document.getElementById(hash.slice(1)));
+      }, 300);
+    }
+  });
 })();
