@@ -65,10 +65,12 @@
       document.getElementsByTagName("body")[0].clientHeight;
     var destinationOffset =
       typeof destination === "number" ? destination : destination.offsetTop;
-    return Math.round(
-      documentHeight - destinationOffset < windowHeight
-        ? documentHeight - windowHeight
-        : destinationOffset
+    return (
+      Math.round(
+        documentHeight - destinationOffset < windowHeight
+          ? documentHeight - windowHeight
+          : destinationOffset
+      ) - 50
     );
   }
 
