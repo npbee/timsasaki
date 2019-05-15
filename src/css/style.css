@@ -121,6 +121,26 @@ a:active {
   transition: box-shadow 300ms;
 }
 
+.logo {
+  @apply text-grey-darkest tracking-wide flex justify-center items-center;
+}
+
+.logo > .first,
+.logo > .last {
+  @apply tracking-wide;
+}
+
+.logo > .first {
+  @apply border-solid border-t border-b border-grey-darkest mr-1;
+}
+
+.logo > .last {
+  background-color: #56654f;
+  border-color: #56654f;
+  color: #fcfffb;
+  @apply border-solid border-t border-b px-1;
+}
+
 /**
  * Pages
  */
